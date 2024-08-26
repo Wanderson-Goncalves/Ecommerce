@@ -1,5 +1,7 @@
 -- Active: 1724235575615@@127.0.0.1@3306@ecommerce
 
+CREATE DATABASE ecommerce;
+USE ecommerce;
 
 create TABLE Endereço(
     idEndereço INT AUTO_INCREMENT PRIMARY KEY,
@@ -18,9 +20,9 @@ CREATE TABLE Cliente(
     Inicial_Nome_Meio CHAR(4) NOT NULL,
     Sobrenome VARCHAR(15) NOT NULL,
     Data_Nascemento DATE NOT NULL,
-    CPF CHAR(12) NOT NULL UNIQUE,
+    CPFCNPJ CHAR(12) NOT NULL ,
     Telefone VARCHAR(11) NOT NULL,
-    constraint cpf_cliente UNIQUE(CPF),
+    constraint cpfcnpj_cliente UNIQUE(CPFCNPJ),
     constraint Endereço_do_Cliente FOREIGN KEY (Endereço) 
         REFERENCES Endereço(IdEndereço)
 );
