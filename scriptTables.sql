@@ -1,4 +1,4 @@
--- Active: 1724235575615@@127.0.0.1@3306@ecommerce
+-- Active: 1731321658920@@127.0.0.1@3306@ecommerce
 DROP DATABASE ecommerce;
 CREATE DATABASE ecommerce;
 USE ecommerce;
@@ -26,6 +26,8 @@ CREATE TABLE Cliente(
     constraint Endereço_do_Cliente FOREIGN KEY (Endereço) 
         REFERENCES Endereço(IdEndereço)
 );
+
+--TODO - verificar como coloca somente o mes e o ano no banco de dados
 
 CREATE TABLE Cartão(
     idCartão INT AUTO_INCREMENT PRIMARY KEY,
@@ -134,3 +136,4 @@ CREATE TABLE Pagamento(
     constraint fk_Pagamento_Pedido_idPendido FOREIGN KEY (Pedido_idPedido) REFERENCES Pedido(idPedido),
     constraint fk_Pagamento_Cartão_idCartão FOREIGN KEY (Cartão_idCartão) REFERENCES Cartão(idCartão)
 );
+select * from produto;
