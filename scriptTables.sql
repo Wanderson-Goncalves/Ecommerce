@@ -27,7 +27,6 @@ CREATE TABLE Cliente(
         REFERENCES Endereço(IdEndereço)
 );
 
---TODO - verificar como coloca somente o mes e o ano no banco de dados
 
 CREATE TABLE Cartão(
     idCartão INT AUTO_INCREMENT PRIMARY KEY,
@@ -70,6 +69,7 @@ CREATE TABLE Vendedor_Terceirizado(
     constraint Endereço_Vendedor_Terceirizado FOREIGN KEY (Endereço)
         REFERENCES Endereço(idEndereço)
 );
+select * from vendedor_terceirizado;
 
 
 CREATE TABLE Produto(
@@ -78,6 +78,7 @@ CREATE TABLE Produto(
     Descrição VARCHAR(100) NOT NULL,
     Valor FLOAT NOT NULL
 );
+SELECT * from produto;
 
 CREATE TABLE Estoque(
     idEstoque INT AUTO_INCREMENT PRIMARY KEY,
